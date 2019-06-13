@@ -1,0 +1,21 @@
+{
+  "name": "r4s-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:therapy/R4S-test.git",
+  "author": "Ilya Klimov <therapyspb@yandex.ru>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html --no-autoinstall --open",
+    "prebuild": "rm -rf dist",
+    "build": "parcel build index.html --experimental-scope-hoisting"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.0-rc.22",
+    "vue": "^2.6.10"
+  }
+}

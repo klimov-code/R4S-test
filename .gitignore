@@ -1,0 +1,10 @@
+.cache
+.vscode
+dist
+node_modules
+design
+
+*.webm
+*.mp4
+yarn-error.log
+yarn.lock
