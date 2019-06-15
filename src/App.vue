@@ -2,18 +2,21 @@
   <div id="app">
     <Dropdown></Dropdown>
     <Table></Table>
+    <Pagination></Pagination>
   </div>
 </template>
 
 <script>
 import Dropdown from "./components/Dropdown";
 import Table from "./components/Table";
+import Pagination from "./components/Pagination";
 
 export default {
   name: "App",
   components: {
     Dropdown,
-    Table
+    Table,
+    Pagination
   }
 };
 </script>
