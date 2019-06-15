@@ -1,22 +1,25 @@
 <template>
   <div id="app">
-    <Dropdown></Dropdown>
+    <TableButtonGroup></TableButtonGroup>
+    <TableDropdownMenu></TableDropdownMenu>
     <Table></Table>
-    <Pagination></Pagination>
+    <TablePagination></TablePagination>
   </div>
 </template>
 
 <script>
-import Dropdown from "./components/Dropdown";
 import Table from "./components/Table";
-import Pagination from "./components/Pagination";
+import TableButtonGroup from "./components/TableButtonGroup";
+import TableDropdownMenu from "./components/TableDropdownMenu";
+import TablePagination from "./components/TablePagination";
 
 export default {
   name: "App",
   components: {
-    Dropdown,
     Table,
-    Pagination
+    TableButtonGroup,
+    TableDropdownMenu,
+    TablePagination
   }
 };
 </script>
@@ -26,8 +29,6 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 </style>
