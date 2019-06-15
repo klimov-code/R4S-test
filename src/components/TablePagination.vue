@@ -1,15 +1,15 @@
 <template>
   <b-container>
     <b-select v-model="perPage" :options="options"></b-select>
-    <b-button :disabled="prevDisabled" @click="prevPage">&lt;</b-button>
-    <div>{{ currentPage }}</div>
-    <b-button :disabled="nextDisabled" @click="nextPage">&gt;</b-button>
+    <b-button :disabled="prevDisabled" @click="prevPage">&lsaquo;</b-button>
+    <div>{{ displayedProducts }}</div>
+    <b-button :disabled="nextDisabled" @click="nextPage">&rsaquo;</b-button>
   </b-container>
 </template>
 
 <script>
 export default {
-  name: "Pagination",
+  name: "TablePagination",
   data() {
     return {
       total: 100,
@@ -19,6 +19,12 @@ export default {
     };
   },
   computed: {
+    displayedProducts() {
+      const start = (this.currentPage - 1) * this.perPage + 1;
+      const end = this.currentPage * this.perPage;
+
+      return `${start}-${end} of ${this.total}`;
+    },
     prevDisabled() {
       return this.currentPage <= 1;
     },
