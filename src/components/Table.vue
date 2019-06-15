@@ -382,38 +382,32 @@ export default {
         {
           key: "product",
           label: "Dessert (100g serving)",
-          sortable: true,
-          class: "text-left"
+          sortable: true
         },
         {
           key: "calories",
           label: "Calories",
-          sortable: true,
-          class: "text-left"
+          sortable: true
         },
         {
           key: "fat",
           label: "Fat (g)",
-          sortable: true,
-          class: "text-left"
+          sortable: true
         },
         {
           key: "carbs",
           label: "Carbs (g)",
-          sortable: true,
-          class: "text-left"
+          sortable: true
         },
         {
           key: "protein",
           label: "Protein (g)",
-          sortable: true,
-          class: "text-left"
+          sortable: true
         },
         {
           key: "iron",
           label: "Iron (%)",
-          sortable: true,
-          class: "text-left"
+          sortable: true
         }
       ],
       currentPage: 1,
