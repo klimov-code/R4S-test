@@ -5,7 +5,8 @@ const types = {
   NEXT_PAGE: 'NEXT_PAGE',
   PER_PAGE: 'PER_PAGE',
 
-  SELECTED_FIELDS: 'SELECTED_FIELDS'
+  SELECTED_FIELDS: 'SELECTED_FIELDS',
+  GROUP_BY: 'GROUP_BY'
 };
 
 export { types };

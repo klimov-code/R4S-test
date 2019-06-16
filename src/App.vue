@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <TableButtonGroup></TableButtonGroup>
-    <TableDropdownMenu></TableDropdownMenu>
+    <b-container>
+      <TableButtonGroup></TableButtonGroup>
+      <TablePagination></TablePagination>
+      <TableDropdownMenu></TableDropdownMenu>
+    </b-container>
     <Table></Table>
-    <TablePagination></TablePagination>
   </div>
 </template>
 

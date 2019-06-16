@@ -1,27 +1,28 @@
 <template>
-  <b-container>
+  <b-button-group>
     <b-button
       v-for="(button, index) of options"
       :key="index"
-      @click="selectedGroupBy(button.value)"
+      @click="groupBy(button.value)"
     >{{ button.text }}</b-button>
-  </b-container>
+  </b-button-group>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 import { options } from "../constants";
 
 export default {
   name: "TableButtonGroup",
   data() {
     return {
-      groupBy: "",
       options
     };
   },
   methods: {
-    selectedGroupBy(value) {
-      this.groupBy = value;
+    groupBy(groupBy) {
+      this.$store.dispatch("table/groupBy", { groupBy });
     }
   }
 };

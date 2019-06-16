@@ -15,6 +15,9 @@ const mutations = {
   },
   [types.SELECTED_FIELDS](state, payload) {
     state.selectedFields = payload.selectedFields;
+  },
+  [types.GROUP_BY](state, payload) {
+    state.groupBy = payload.groupBy;
   }
 };
 

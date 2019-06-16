@@ -23,6 +23,9 @@ const actions = {
   },
   selectedFields({ commit }, payload) {
     commit(types.SELECTED_FIELDS, payload);
+  },
+  groupBy({ commit }, payload) {
+    commit(types.GROUP_BY, payload);
   }
 };
 
