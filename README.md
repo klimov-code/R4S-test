@@ -1,3 +1,9 @@
 # R4S-test
 
-test for Ready for Sky
+## Test for Ready for Sky
+
+Stack:
+
+- vue
+- vuex
+- bootstrap-vue
