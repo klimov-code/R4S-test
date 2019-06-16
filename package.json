@@ -1,6 +1,6 @@
 {
   "name": "r4s-test",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "index.js",
   "repository": "git@github.com:therapy/R4S-test.git",
   "author": "Ilya Klimov <therapyspb@yandex.ru>",
