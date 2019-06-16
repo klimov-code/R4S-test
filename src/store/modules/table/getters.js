@@ -5,7 +5,7 @@ const getters = {
 
     return initialFields.filter(({ key }) => selectedFields.includes(key));
   },
-  fields: (state, getters) => {
+  groupedFields: (state, getters) => {
     const { groupBy } = state;
     const { filteredFields } = getters;
 
@@ -22,6 +22,17 @@ const getters = {
 
       return fields;
     }
+  },
+  fields: (state, getters) => {
+    const { groupedFields } = getters;
+
+    return [
+      ...groupedFields,
+      {
+        key: 'action',
+        label: 'Action'
+      }
+    ];
   }
 };
 
