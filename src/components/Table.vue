@@ -1,9 +1,8 @@
 <template>
   <b-table
-    responsive
-    bordered
     hover
     striped
+    borderless
     :items="products"
     :fields="fields"
     :current-page="currentPage"
@@ -20,8 +19,14 @@ export default {
     ...mapGetters("table", ["fields"]),
     ...mapState("table", ["currentPage", "perPage", "products"])
   },
-  created() {
+  mounted() {
     this.$store.dispatch("table/fetchProducts");
   }
 };
 </script>
+
+<style scoped>
+.table {
+  background-color: #fff;
+}
+</style>

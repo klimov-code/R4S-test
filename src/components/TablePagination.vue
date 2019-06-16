@@ -1,10 +1,12 @@
 <template>
-  <b-container>
-    <b-select v-model="perPage" :options="options"></b-select>
-    <b-button :disabled="prevDisabled" @click="prevPage">&lsaquo;</b-button>
+  <div class="button-group">
+    <select v-model="perPage" class="select">
+      <option v-for="option of options" :key="option.value" :value="option.value">{{option.text}}</option>
+    </select>
+    <button :disabled="prevDisabled" @click="prevPage" class="button-pagination">&lsaquo;</button>
     <span>{{ displayedProducts }}</span>
-    <b-button :disabled="nextDisabled" @click="nextPage">&rsaquo;</b-button>
-  </b-container>
+    <button :disabled="nextDisabled" @click="nextPage" class="button-pagination">&rsaquo;</button>
+  </div>
 </template>
 
 <script>
@@ -14,7 +16,11 @@ export default {
   name: "TablePagination",
   data() {
     return {
-      options: [10, 15, 20]
+      options: [
+        { value: 10, text: "10 Per Page" },
+        { value: 15, text: "15 Per Page" },
+        { value: 20, text: "20 Per Page" }
+      ]
     };
   },
   computed: {
@@ -46,3 +52,26 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.select {
+  width: 109px;
+  height: 32px;
+
+  border: 1px solid #c6cbd4;
+  border-radius: 2px;
+}
+
+.button-pagination {
+  width: 32px;
+  height: 32px;
+
+  margin: 0 8px;
+
+  color: #333;
+
+  background: transparent;
+  border: 1px solid #c6cbd4;
+  border-radius: 2px;
+}
+</style>

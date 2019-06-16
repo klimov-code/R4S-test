@@ -1,10 +1,12 @@
 <template>
-  <b-dropdown :text="selectedFields.length + ' Columns selected'">
-    <b-dropdown-form>
-      <b-form-checkbox v-model="selectAll" @change="toggleSelectAll">{{ 'Select All' }}</b-form-checkbox>
-      <b-form-checkbox-group v-model="selectedFields" :options="options" stacked></b-form-checkbox-group>
-    </b-dropdown-form>
-  </b-dropdown>
+  <div class="button-group">
+    <b-dropdown :text="selectedFields.length + ' Columns selected'" class="button-menu">
+      <b-dropdown-form>
+        <b-form-checkbox v-model="selectAll" @change="toggleSelectAll">{{ 'Select All' }}</b-form-checkbox>
+        <b-form-checkbox-group v-model="selectedFields" :options="options" stacked></b-form-checkbox-group>
+      </b-dropdown-form>
+    </b-dropdown>
+  </div>
 </template>
 
 <script>
@@ -51,3 +53,15 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.button-menu {
+  width: 158px;
+  height: 32px;
+
+  color: #333;
+
+  border: 1px solid #4b74ff;
+  border-radius: 2px;
+}
+</style>
