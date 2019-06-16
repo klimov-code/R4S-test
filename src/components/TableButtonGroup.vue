@@ -9,19 +9,14 @@
 </template>
 
 <script>
+import { options } from "../constants";
+
 export default {
   name: "TableButtonGroup",
   data() {
     return {
       groupBy: "",
-      options: [
-        { text: "Dessert (100g serving)", value: "product" },
-        { text: "Calories", value: "calories" },
-        { text: "Fat (g)", value: "fat" },
-        { text: "Carbs (g)", value: "carbs" },
-        { text: "Protein (g)", value: "protein" },
-        { text: "Iron (%)", value: "iron" }
-      ]
+      options
     };
   },
   methods: {
