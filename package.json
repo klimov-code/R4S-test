@@ -1,6 +1,6 @@
 {
   "name": "r4s-test",
-  "version": "1.0.0",
+  "version": "0.0.5",
   "main": "index.js",
   "repository": "git@github.com:therapy/R4S-test.git",
   "author": "Ilya Klimov <therapyspb@yandex.ru>",
@@ -11,12 +11,16 @@
     "build": "parcel build src/index.html --experimental-scope-hoisting"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
     "@vue/component-compiler-utils": "^3.0.0",
     "parcel-bundler": "^1.12.3",
     "vue-hot-reload-api": "^2.3.3",
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
+    "@babel/runtime": "^7.4.5",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.23",
     "vue": "^2.6.10",
