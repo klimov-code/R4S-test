@@ -3,7 +3,9 @@ const types = {
 
   PREV_PAGE: 'PREV_PAGE',
   NEXT_PAGE: 'NEXT_PAGE',
-  PER_PAGE: 'PER_PAGE'
+  PER_PAGE: 'PER_PAGE',
+
+  SELECTED_FIELDS: 'SELECTED_FIELDS'
 };
 
 export { types };

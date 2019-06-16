@@ -12,6 +12,9 @@ const mutations = {
   },
   [types.PER_PAGE](state, payload) {
     state.perPage = payload.perPage;
+  },
+  [types.SELECTED_FIELDS](state, payload) {
+    state.selectedFields = payload.selectedFields;
   }
 };
 

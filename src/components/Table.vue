@@ -12,47 +12,12 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapGetters, mapState } from "vuex";
 
 export default {
   name: "Table",
-  data() {
-    return {
-      fields: [
-        {
-          key: "product",
-          label: "Dessert (100g serving)",
-          sortable: true
-        },
-        {
-          key: "calories",
-          label: "Calories",
-          sortable: true
-        },
-        {
-          key: "fat",
-          label: "Fat (g)",
-          sortable: true
-        },
-        {
-          key: "carbs",
-          label: "Carbs (g)",
-          sortable: true
-        },
-        {
-          key: "protein",
-          label: "Protein (g)",
-          sortable: true
-        },
-        {
-          key: "iron",
-          label: "Iron (%)",
-          sortable: true
-        }
-      ]
-    };
-  },
   computed: {
+    ...mapGetters("table", ["fields"]),
     ...mapState("table", ["currentPage", "perPage", "products"])
   },
   created() {
