@@ -2,19 +2,18 @@
   <b-container>
     <b-select v-model="perPage" :options="options"></b-select>
     <b-button :disabled="prevDisabled" @click="prevPage">&lsaquo;</b-button>
-    <div>{{ displayedProducts }}</div>
+    <span>{{ displayedProducts }}</span>
     <b-button :disabled="nextDisabled" @click="nextPage">&rsaquo;</b-button>
   </b-container>
 </template>
 
 <script>
+import { mapActions, mapGetters, mapState } from "vuex";
+
 export default {
   name: "TablePagination",
   data() {
     return {
-      total: 100,
-      currentPage: 1,
-      perPage: 10,
       options: [10, 15, 20]
     };
   },
@@ -23,22 +22,27 @@ export default {
       const start = (this.currentPage - 1) * this.perPage + 1;
       const end = this.currentPage * this.perPage;
 
-      return `${start}-${end} of ${this.total}`;
+      return `${start}-${end} of ${this.productsCount}`;
     },
     prevDisabled() {
       return this.currentPage <= 1;
     },
     nextDisabled() {
-      return this.currentPage >= Math.ceil(this.total / this.perPage);
-    }
+      return this.currentPage >= Math.ceil(this.productsCount / this.perPage);
+    },
+    perPage: {
+      get() {
+        return this.$store.state.table.perPage;
+      },
+      set(perPage) {
+        this.$store.dispatch("table/perPage", { perPage });
+      }
+    },
+    ...mapState("table", ["currentPage"]),
+    ...mapGetters("table", ["productsCount"])
   },
   methods: {
-    nextPage() {
-      this.currentPage += 1;
-    },
-    prevPage() {
-      this.currentPage -= 1;
-    }
+    ...mapActions("table", ["prevPage", "nextPage"])
   }
 };
 </script>
