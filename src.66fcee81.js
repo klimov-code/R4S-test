@@ -650,4 +650,4 @@ module.exports=[{id:1,product:"Pork - Back Ribs",calories:991,fat:16,carbs:71,pr
 },{"vuex":"aKwh","vuex/dist/logger":"zQ6Y","./modules/table":"STYV"}],"Focm":[function(require,module,exports) {
 "use strict";var e=t(require("vue"));require("regenerator-runtime/runtime"),require("./plugins/bootstrap"),require("./plugins/vuex");var r=t(require("./App")),u=require("./store");function t(e){return e&&e.__esModule?e:{default:e}}new e.default({store:u.store,render:function(e){return e(r.default)}}).$mount("#app");
 },{"vue":"QPfz","regenerator-runtime/runtime":"QVnC","./plugins/bootstrap":"sy3a","./plugins/vuex":"iZZK","./App":"Js2s","./store":"rMii"}]},{},["Focm"], null)
-//# sourceMappingURL=/src.66fcee81.js.map
+//# sourceMappingURL=R4S-test/src.66fcee81.js.map
