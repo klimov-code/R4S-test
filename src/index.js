@@ -1,10 +1,12 @@
 import Vue from 'vue';
 
-import './plugins/vuex';
+import 'regenerator-runtime/runtime';
+
 import './plugins/bootstrap';
+import './plugins/vuex';
 
 import App from './App';
-import store from './store';
+import { store } from './store';
 
 new Vue({
   store,
