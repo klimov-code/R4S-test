@@ -15,7 +15,7 @@
       <button :id="`trash-button-${row.item.id}`" class="t-button t-button-link">
         <img src="../assets/trash.svg" class="t-button-img">Delete
       </button>
-      <b-popover :target="`trash-button-${row.item.id}`" placement="bottom" triggers="click">
+      <b-popover :target="`trash-button-${row.item.id}`" placement="bottom" triggers="click blur">
         <p>
           Are you sure you want to
           <strong>delete item</strong>?
