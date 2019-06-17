@@ -52,9 +52,11 @@ export default {
 .t-button {
   margin: 8px;
   background: transparent;
-  border: none;
   color: #333;
   white-space: nowrap;
+
+  border: 1px solid #c6cbd4;
+  border-radius: 2px;
 }
 
 .t-header {

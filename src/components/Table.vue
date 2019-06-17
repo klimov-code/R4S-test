@@ -78,6 +78,7 @@ export default {
 }
 
 .t-button-link {
+  border: none !important;
   color: #e55b5b !important;
 }
 

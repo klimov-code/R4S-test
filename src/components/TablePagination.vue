@@ -53,21 +53,16 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .t-select {
   width: 109px;
   height: 32px;
 
   background-color: transparent;
-  border: 1px solid #c6cbd4;
-  border-radius: 2px;
 }
 
 .t-button-pagination {
   width: 32px;
   height: 32px;
-
-  border: 1px solid #c6cbd4;
-  border-radius: 2px;
 }
 </style>
