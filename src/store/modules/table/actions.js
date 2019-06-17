@@ -3,23 +3,27 @@ import { emulateGetRequest, emulateDeleteRequest } from '../../../api/request';
 import { types } from './mutation-types';
 
 const actions = {
-  async fetchProducts({ commit }) {
+  async fetchProducts({ commit }, { callback }) {
     try {
       const products = await emulateGetRequest();
 
       commit(types.FETCH_PRODUCTS, { products });
-    } catch (error) {
+    } catch ({ error }) {
+      callback(error);
+
       console.warn(error);
     }
   },
-  async deleteProduct({ commit }, { id }) {
+  async deleteProduct({ commit }, { id, callback }) {
     try {
       const deleteProduct = await emulateDeleteRequest();
 
       if (deleteProduct.message === 'deleted') {
         commit(types.DELETE_PRODUCT, { id });
       }
-    } catch (error) {
+    } catch ({ error }) {
+      callback(error);
+
       console.warn(error);
     }
   },

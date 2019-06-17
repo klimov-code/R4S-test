@@ -23,7 +23,7 @@
         <button class="t-button t-popover-button" @click="onCancel()">Cancel</button>
         <button
           class="t-button t-popover-button t-popover-button-confirm"
-          @click="onConfirm(row.item.id)"
+          @click="onConfirm(row.item.id, showToast)"
         >Confirm</button>
       </b-popover>
     </template>
@@ -40,16 +40,23 @@ export default {
     ...mapState("table", ["currentPage", "perPage", "products"])
   },
   methods: {
-    onConfirm(id) {
-      this.$store.dispatch("table/deleteProduct", { id });
+    onConfirm(id, callback) {
+      this.$store.dispatch("table/deleteProduct", { id, callback });
       this.onCancel();
     },
     onCancel(id) {
       this.$root.$emit("bv::hide::popover");
+    },
+    showToast(message) {
+      this.$bvToast.toast(message, {
+        title: "Something went wrong 😥",
+        variant: "danger",
+        solid: true
+      });
     }
   },
   mounted() {
-    this.$store.dispatch("table/fetchProducts");
+    this.$store.dispatch("table/fetchProducts", { callback: this.showToast });
   }
 };
 </script>
