@@ -4,6 +4,11 @@ const mutations = {
   [types.FETCH_PRODUCTS](state, payload) {
     state.products = payload.products;
   },
+  [types.DELETE_PRODUCT](state, payload) {
+    const index = state.products.findIndex(({ id }) => id === payload.id);
+
+    state.products.splice(index, 1);
+  },
   [types.PREV_PAGE](state) {
     state.currentPage -= 1;
   },

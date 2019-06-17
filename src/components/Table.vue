@@ -12,21 +12,41 @@
     :per-page="perPage"
   >
     <template slot="action" slot-scope="row">
-      <button class="t-button t-button-link">
+      <button :id="`trash-button-${row.item.id}`" class="t-button t-button-link">
         <img src="../assets/trash.svg" class="t-button-img">Delete
       </button>
+      <b-popover :target="`trash-button-${row.item.id}`" placement="bottom" triggers="click">
+        <p>
+          Are you sure you want to
+          <strong>delete item</strong>?
+        </p>
+        <button class="t-button t-popover-button" @click="onCancel()">Cancel</button>
+        <button
+          class="t-button t-popover-button t-popover-button-confirm"
+          @click="onConfirm(row.item.id)"
+        >Confirm</button>
+      </b-popover>
     </template>
   </b-table>
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
+import { mapGetters, mapState, mapActions } from "vuex";
 
 export default {
   name: "Table",
   computed: {
     ...mapGetters("table", ["fields"]),
     ...mapState("table", ["currentPage", "perPage", "products"])
+  },
+  methods: {
+    onConfirm(id) {
+      this.$store.dispatch("table/deleteProduct", { id });
+      this.onCancel();
+    },
+    onCancel(id) {
+      this.$root.$emit("bv::hide::popover");
+    }
   },
   mounted() {
     this.$store.dispatch("table/fetchProducts");
@@ -86,5 +106,26 @@ export default {
   position: relative;
   top: -1px;
   right: 7px;
+}
+
+.t-popover {
+  background: #fff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+}
+
+.popover .arrow {
+  visibility: hidden;
+}
+
+.t-popover-button {
+  padding: 0 1rem;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.t-popover-button-confirm {
+  background: #4b74ff !important;
+  color: #fff !important;
 }
 </style>

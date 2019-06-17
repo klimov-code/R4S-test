@@ -101,6 +101,10 @@ export default {
   font-size: 14px;
 }
 
+.custom-control-label::before {
+  top: 0.45rem;
+}
+
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   width: 10px;
   height: 10px;
@@ -119,7 +123,7 @@ export default {
 }
 
 .custom-control-label::after {
-  top: 0.125rem;
+  top: 0.325rem;
   left: -1.625rem;
 }
 
