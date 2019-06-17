@@ -1,11 +1,11 @@
 <template>
-  <div class="button-group">
-    <span class="text-bold">Group By:</span>
+  <div class="t-button-group">
+    <span class="t-text-bold">Group By:</span>
     <button
       v-for="(button, index) of options"
       :key="index"
-      class="button"
-      :class="{ 'button--active': button.value === groupBy }"
+      class="t-button"
+      :class="{ 't-button--active': button.value === groupBy }"
       @click="setGroupBy(button.value)"
     >{{ button.text }}</button>
   </div>
@@ -33,22 +33,13 @@ export default {
 </script>
 
 <style scoped>
-.button {
-  margin: 8px;
-  height: 24px;
-  background: transparent;
-  border: none;
-  color: #333;
-  white-space: nowrap;
-}
-
-.button--active {
+.t-button--active {
   background: #4b74ff;
   border-radius: 4px;
   color: #fff;
 }
 
-.text-bold {
+.t-text-bold {
   font-weight: 600;
   white-space: nowrap;
 }

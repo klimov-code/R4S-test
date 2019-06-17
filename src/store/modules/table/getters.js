@@ -30,7 +30,7 @@ const getters = {
       ...groupedFields,
       {
         key: 'action',
-        label: 'Action'
+        label: ''
       }
     ];
   }

@@ -1,11 +1,11 @@
 <template>
-  <div class="button-group">
-    <select v-model="perPage" class="select">
+  <div class="t-button-group">
+    <select v-model="perPage" class="t-select">
       <option v-for="option of options" :key="option.value" :value="option.value">{{option.text}}</option>
     </select>
-    <button :disabled="prevDisabled" @click="prevPage" class="button-pagination">&lsaquo;</button>
+    <button :disabled="prevDisabled" @click="prevPage" class="t-button t-button-pagination">&lsaquo;</button>
     <span>{{ displayedProducts }}</span>
-    <button :disabled="nextDisabled" @click="nextPage" class="button-pagination">&rsaquo;</button>
+    <button :disabled="nextDisabled" @click="nextPage" class="t-button t-button-pagination">&rsaquo;</button>
   </div>
 </template>
 
@@ -54,23 +54,19 @@ export default {
 </script>
 
 <style scoped>
-.select {
+.t-select {
   width: 109px;
   height: 32px;
 
+  background-color: transparent;
   border: 1px solid #c6cbd4;
   border-radius: 2px;
 }
 
-.button-pagination {
+.t-button-pagination {
   width: 32px;
   height: 32px;
 
-  margin: 0 8px;
-
-  color: #333;
-
-  background: transparent;
   border: 1px solid #c6cbd4;
   border-radius: 2px;
 }

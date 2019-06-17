@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <section class="header">
-      <TableButtonGroup></TableButtonGroup>
-      <TablePagination></TablePagination>
-      <TableDropdownMenu></TableDropdownMenu>
-    </section>
-    <Table></Table>
+    <main class="t-main">
+      <section class="t-header">
+        <TableButtonGroup></TableButtonGroup>
+        <TablePagination></TablePagination>
+        <TableDropdownMenu></TableDropdownMenu>
+      </section>
+      <Table></Table>
+    </main>
   </div>
 </template>
 
@@ -32,43 +34,54 @@ export default {
   font-size: 14px;
   line-height: 24px;
 
-  width: 100%;
-  background: #fbfbfb;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 0 auto;
 }
 
-.button-group {
+.t-main {
+  background: #fbfbfb;
+  width: 100%;
+  margin: 60px auto 0;
+}
+
+.t-button-group {
   display: inline-flex;
   align-items: center;
 }
 
-.header {
+.t-button {
+  margin: 8px;
+  background: transparent;
+  border: none;
+  color: #333;
+  white-space: nowrap;
+}
+
+.t-header {
   display: flex;
   height: 64px;
   justify-content: space-between;
 }
 
 @media (min-width: 576px) {
-  #app {
+  .t-main {
     width: 540px;
   }
 }
 
 @media (min-width: 768px) {
-  #app {
+  .t-main {
     width: 720px;
   }
 }
 @media (min-width: 992px) {
-  #app {
+  .t-main {
     width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
-  #app {
+  .t-main {
     width: 1140px;
   }
 }
